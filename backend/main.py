@@ -8,12 +8,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from PIL import Image
 
-from verifier import verify_photo, MISSION_CRITERIA
-
+import sys
 from pathlib import Path
 
-env_path = Path(__file__).parent / ".env"
+backend_dir = Path(__file__).resolve().parent
+if str(backend_dir) not in sys.path:
+    sys.path.insert(0, str(backend_dir))
+
+env_path = backend_dir / ".env"
 load_dotenv(dotenv_path=env_path)
+
+from verifier import verify_photo, MISSION_CRITERIA
 
 app = FastAPI(title="StreetQuest Backend", version="1.0.0")
 
