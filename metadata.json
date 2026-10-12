@@ -1,0 +1,6 @@
+{
+  "name": "StreetQuest",
+  "description": "A calm, minimal outdoor treasure-hunt web app with small missions and quiet AI photo verification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
